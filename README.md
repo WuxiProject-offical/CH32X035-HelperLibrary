@@ -7,6 +7,8 @@ Useful middleware libraries for CH32X035 series.
 
 - USB
   - **[KeyboardAndMouse](USB/KeyboardAndMouse)** A simple keyboard and mouse simulation library.
+- SPI
+  - **[Master](SPI/Master)** A simple SPI master mode library.
 - Link File
   - **[Link_highcode_62k.ld](link_file/Link_highcode_62k.ld)** Provides `__attribute__((section(".highcode")))` (run in RAM, calls`highcode`)feature.
 - Startup File
