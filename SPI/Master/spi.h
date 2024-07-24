@@ -36,10 +36,10 @@
 
 /*
  * SPI_REMAP: Defines which group of GPIO combination to use
- *  - SPI_Remap_None			SCK/PA5, MISO/PA6, MOSI/PA7
- *  - SPI_Remap_1				SCK/PB15, MISO/PA8, MOSI/PA9
- *  - SPI_Remap_2				SCK/PA11, MISO/PA9, MOSI/PA10
- *  - SPI_Remap_3				SCK/PC5, MISO/PC6, MOSI/PC7
+ *  - SPI_REMAP_None			SCK/PA5, MISO/PA6, MOSI/PA7
+ *  - SPI_REMAP_1				SCK/PB15, MISO/PA8, MOSI/PA9
+ *  - SPI_REMAP_2				SCK/PA11, MISO/PA9, MOSI/PA10
+ *  - SPI_REMAP_3				SCK/PC5, MISO/PC6, MOSI/PC7
  */
 #define SPI_REMAP 		SPI_REMAP_NONE
 
