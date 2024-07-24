@@ -21,6 +21,25 @@
 
 #include  "ch32x035.h"
 
+#ifdef SPI_REMAP
+#undef SPI_REMAP
+#endif
+#ifdef SPI_DIR
+#undef SPI_DIR
+#endif
+#ifdef SPI_CLKEDGE
+#undef SPI_CLKEDGE
+#endif
+#ifdef SPI_CLKPOL
+#undef SPI_CLKPOL
+#endif
+#ifdef SPI_CLKPSC
+#undef SPI_CLKPSC
+#endif
+#ifdef SPI_RETRY_TIMEOUT
+#undef SPI_RETRY_TIMEOUT
+#endif
+
 #define SPI_REMAP_NONE (0)
 #define SPI_REMAP_1 (1)
 #define SPI_REMAP_2 (2)
