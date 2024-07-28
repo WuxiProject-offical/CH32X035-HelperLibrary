@@ -7,6 +7,7 @@ Useful middleware libraries for CH32X035 series.
 
 - USB
   - **[KeyboardAndMouse](USB/KeyboardAndMouse)** A simple keyboard and mouse simulation library.
+  - **[Queued](USB/Queued)** A queued processing middleware library helps handle command-response style USB communication easier.
 - SPI
   - **[Master](SPI/Master)** A simple SPI master mode library.
 - Link File

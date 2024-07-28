@@ -7,6 +7,7 @@ To read English version of this file，please turn to [README.zh-cn.md](README.z
 
 - USB
   - **[KeyboardAndMouse](USB/KeyboardAndMouse)** 一个简单的键盘鼠标模拟库。
+  - **[Queued](USB/Queued)** 一个用于简化处理“命令-响应”式USB通信的队列处理中间件库。
 - SPI
   - **[Master](SPI/Master)** 一个简单的SPI主机模式函数库。
 - 链接脚本文件
