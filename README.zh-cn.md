@@ -10,6 +10,8 @@ To read English version of this file，please turn to [README.zh-cn.md](README.z
   - **[Queued](USB/Queued)** 一个用于简化处理“命令-响应”式USB通信的队列处理中间件库。
 - SPI
   - **[Master](SPI/Master)** 一个简单的SPI主机模式函数库。
+- I2C
+  - **[Master](I2C/Master)** 一个简单的I2C主机模式函数库。
 - 链接脚本文件
   - **[Link_highcode_62k.ld](link_file/Link_highcode_62k.ld)** 提供 `__attribute__((section(".highcode")))` （在RAM中运行代码，称`highcode`）的特性。
 - 启动汇编文件

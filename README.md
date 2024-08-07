@@ -10,6 +10,8 @@ Useful middleware libraries for CH32X035 series.
   - **[Queued](USB/Queued)** A queued processing middleware library helps handle command-response style USB communication easier.
 - SPI
   - **[Master](SPI/Master)** A simple SPI master mode library.
+- I2C
+  - **[Master](I2C/Master)** A simple I2C master mode library.
 - Link File
   - **[Link_highcode_62k.ld](link_file/Link_highcode_62k.ld)** Provides `__attribute__((section(".highcode")))` (run in RAM, calls`highcode`)feature.
 - Startup File
