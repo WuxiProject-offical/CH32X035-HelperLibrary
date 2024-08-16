@@ -39,15 +39,17 @@ extern volatile uint8_t USBFS_Endp_Busy[];
 // Prepare data for IN endpoint upload.
 uint8_t USBQueue_EPUpload(uint8_t *buf, uint16_t len)
 {
-	while(USBFS_Endp_Busy[UQ_EP_UP])
-	{	;}
+	while (USBFS_Endp_Busy[UQ_EP_UP])
+	{
+		;
+	}
 	return USBFS_Endp_DataUp(UQ_EP_UP, buf, len, DEF_UEP_DMA_LOAD);
 }
 
 // Prepare buffer for OUT transaction.
 void USBQueue_SetEPDNAddr(uint8_t *buffer)
 {
-	USBFSD->UEP2_DMA = (uint32_t) buffer;
+	USBFSD->UEP2_DMA = (uint32_t)buffer;
 }
 
 // Control the OUT(downstream) endpoint ACK status.
@@ -69,8 +71,9 @@ void USBQueue_SetEPDNAck(FunctionalState state)
 
 // This function should be re-implemented as your need.
 __attribute__((weak))
-  uint8_t USBQueue_UserProcessor(uint8_t *inData,
-		uint8_t inLen, uint8_t *outData)
+uint8_t
+USBQueue_UserProcessor(uint8_t *inData,
+					   uint8_t inLen, uint8_t *outData)
 {
 	uint8_t outLen = 0;
 	/* Handle request here.
@@ -89,8 +92,8 @@ __attribute__((weak))
 
 #define MEMCLEAR(x) (memset((x), 0x00, sizeof((x))))
 
-__attribute__ ((aligned(4))) volatile uint8_t UQ_InQueue[UQ_QUEUELEN][UQ_PACKLEN_MAX];
-__attribute__ ((aligned(4))) volatile uint8_t UQ_OutQueue[UQ_QUEUELEN][UQ_PACKLEN_MAX];
+__attribute__((aligned(4))) volatile uint8_t UQ_InQueue[UQ_QUEUELEN][UQ_PACKLEN_MAX];
+__attribute__((aligned(4))) volatile uint8_t UQ_OutQueue[UQ_QUEUELEN][UQ_PACKLEN_MAX];
 static volatile uint8_t UQ_InLen[UQ_QUEUELEN], UQ_OutLen[UQ_QUEUELEN];
 static volatile uint8_t UQ_InPtrIn = 0, UQ_InPtrOut = 0;
 static volatile uint8_t UQ_InCntIn = 0, UQ_InCntOut = 0;
@@ -123,7 +126,7 @@ void USBQueue_EpOUT_Handler(uint8_t len)
 		UQ_InPtrIn = 0;
 	}
 	UQ_InCntIn++;
-	if ((uint8_t) (UQ_InCntIn - UQ_InCntOut) != UQ_QUEUELEN)
+	if ((uint8_t)(UQ_InCntIn - UQ_InCntOut) != UQ_QUEUELEN)
 	{
 		USBQueue_SetEPDNAddr(UQ_InQueue[UQ_InPtrIn]);
 		USBQueue_SetEPDNAck(ENABLE);
@@ -206,4 +209,3 @@ uint8_t USBQueue_DoProcess()
 	}
 	return flagProcessed;
 }
-
