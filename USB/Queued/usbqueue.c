@@ -87,7 +87,7 @@ __attribute__((weak))
 
 // ##PORT_IMPLEMENTION_END##
 
-#define MEMCLEAR(x) (memset((x),0x00,sizeof((x))))
+#define MEMCLEAR(x) (memset((x), 0x00, sizeof((x))))
 
 __attribute__ ((aligned(4))) volatile uint8_t UQ_InQueue[UQ_QUEUELEN][UQ_PACKLEN_MAX];
 __attribute__ ((aligned(4))) volatile uint8_t UQ_OutQueue[UQ_QUEUELEN][UQ_PACKLEN_MAX];
@@ -159,10 +159,11 @@ uint8_t USBQueue_DoProcess()
 	uint8_t n, flagProcessed = 0;
 	while (UQ_InCntIn != UQ_InCntOut)
 	{ // Unhandled request in queue
-	  // Start to process
+		n = UQ_InPtrOut;
+		// Start to process
 		UQ_OutLen[UQ_OutPtrIn] = (uint8_t)USBQueue_UserProcessor(UQ_InQueue[UQ_InPtrOut], UQ_InLen[UQ_InPtrOut], UQ_OutQueue[UQ_OutPtrIn]);
 		UQ_InPtrOut++;
-		if (UQ_InPtrOut == UQ_QUEUELEN)// loopback
+		if (UQ_InPtrOut == UQ_QUEUELEN) // loopback
 		{
 			UQ_InPtrOut = 0U;
 		}
@@ -181,7 +182,7 @@ uint8_t USBQueue_DoProcess()
 
 		// Update Response Index and Count
 		UQ_OutPtrIn++;
-		if (UQ_OutPtrIn == UQ_QUEUELEN)// loopback
+		if (UQ_OutPtrIn == UQ_QUEUELEN) // loopback
 		{
 			UQ_OutPtrIn = 0U;
 		}
