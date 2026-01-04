@@ -20,5 +20,4 @@ To read English version of this file，please turn to [README.zh-cn.md](README.z
 
 ## License
 
-本库使用 **GPLv3** 许可证. 阅读 [LICENSE](LICENSE) 文件以获得更多信息。  
-![GPLv3 Logo](https://www.gnu.org/graphics/gplv3-with-text-136x68.png)  
+由于存在混合许可证的问题，本仓库目前没有可用的许可证。
