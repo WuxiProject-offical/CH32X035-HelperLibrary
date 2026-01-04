@@ -20,5 +20,4 @@ Useful middleware libraries for CH32X035 series.
 
 ## License
 
-This library is under **GPLv3** license. Read [LICENSE](LICENSE) for more information.  
-![GPLv3 Logo](https://www.gnu.org/graphics/gplv3-with-text-136x68.png)  
+Due to mixed license issues, this repository currently has no available license.
